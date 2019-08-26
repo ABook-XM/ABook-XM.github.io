@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://e.coding.net/iot-friend/"/>
+  <link href="http://h79dtm.coding-pages.com/"/>
   <updated>2019-08-01T07:18:40.727Z</updated>
-  <id>https://e.coding.net/iot-friend/</id>
+  <id>http://h79dtm.coding-pages.com/</id>
   
   <author>
     <name>XIao Ming</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Jarvisoj- in a mess(SQL)</title>
-    <link href="https://e.coding.net/iot-friend/2019/07/31/jarvisoj-in-a-mess-sql/"/>
-    <id>https://e.coding.net/iot-friend/2019/07/31/jarvisoj-in-a-mess-sql/</id>
+    <link href="http://h79dtm.coding-pages.com/2019/07/31/jarvisoj-in-a-mess-sql/"/>
+    <id>http://h79dtm.coding-pages.com/2019/07/31/jarvisoj-in-a-mess-sql/</id>
     <published>2019-07-31T09:27:22.000Z</published>
     <updated>2019-08-01T07:18:40.727Z</updated>
     
@@ -35,17 +35,17 @@
     
     </summary>
     
-      <category term="web" scheme="https://e.coding.net/iot-friend/categories/web/"/>
+      <category term="web" scheme="http://h79dtm.coding-pages.com/categories/web/"/>
     
     
-      <category term="web" scheme="https://e.coding.net/iot-friend/tags/web/"/>
+      <category term="web" scheme="http://h79dtm.coding-pages.com/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>安卓逆向学习笔记（一）</title>
-    <link href="https://e.coding.net/iot-friend/2019/07/31/an-zhuo-ni-xiang-xue-xi-bi-ji-yi/"/>
-    <id>https://e.coding.net/iot-friend/2019/07/31/an-zhuo-ni-xiang-xue-xi-bi-ji-yi/</id>
+    <link href="http://h79dtm.coding-pages.com/2019/07/31/an-zhuo-ni-xiang-xue-xi-bi-ji-yi/"/>
+    <id>http://h79dtm.coding-pages.com/2019/07/31/an-zhuo-ni-xiang-xue-xi-bi-ji-yi/</id>
     <published>2019-07-31T09:27:22.000Z</published>
     <updated>2019-08-01T07:17:28.491Z</updated>
     
@@ -61,10 +61,10 @@
     
     </summary>
     
-      <category term="Android" scheme="https://e.coding.net/iot-friend/categories/Android/"/>
+      <category term="Android" scheme="http://h79dtm.coding-pages.com/categories/Android/"/>
     
     
-      <category term="Android" scheme="https://e.coding.net/iot-friend/tags/Android/"/>
+      <category term="Android" scheme="http://h79dtm.coding-pages.com/tags/Android/"/>
     
   </entry>
   
